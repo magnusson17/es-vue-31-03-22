@@ -50,14 +50,14 @@
                                 <span>{{element.nome}}</span>
                                 <div class="d-flex align-items-center ">
                                     <span>{{element.price}}$</span>
-                                    <button type="button" class="btn btn-danger ms-3">Rimuovi</button>
+                                    <button @click="removeToCart(element.id)" type="button" class="btn btn-danger ms-3">Rimuovi</button>
                                 </div>
                             </li>
                         </ul>
 
                         <div class="text-center">
                             <h2>Somma</h2>
-                            <h4>150</h4>
+                            <h4>{{sommaPrice()}}</h4>
                         </div>
 
                     </div>

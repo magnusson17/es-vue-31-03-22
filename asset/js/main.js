@@ -39,7 +39,27 @@ var app = new Vue(
         methods: {
             addToCart: function(element) {
                 console.log(element);
-                this.carrello.push(element)
+                this.carrello.push(element);
+            },
+
+            removeToCart: function(id) {
+                this.carrello = this.carrello.filter(
+                    (element) => {
+                        if (element.id != id) {
+                            return true
+                        }
+                        return false
+                    }
+                )
+            },
+
+            sommaPrice: function() {
+                let total = 0;
+                this.carrello.forEach(
+                    (element) => {
+                    total += element.price;
+                });
+            return total;
             }
         }
     }
